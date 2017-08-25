@@ -1,3 +1,4 @@
+import QtQml 2.0
 import QtQuick 2.7
 import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
@@ -127,6 +128,25 @@ ApplicationWindow {
                 model: activitiesModel.json
                 visible: activitiesStackView.depth == 1
                 textRole: "day"
+                Component.onCompleted: {
+                    var firstDay = Date.fromLocaleDateString(Qt.locale("pt_BR"), textAt(0), "dd/MM/yyyy")
+                    var lastDay = Date.fromLocaleDateString(Qt.locale("pt_BR"), textAt(count-1), "dd/MM/yyyy")
+                    var today = new Date()
+                    if(today - firstDay < 8.64e+7) {
+                        currentIndex = 0
+                        return
+                    } else if(today - lastDay >= 0) {
+                        currentIndex = count - 1
+                        return
+                    }
+                    for(var i = 1; i < count - 1; i++) {
+                        var day = Date.fromLocaleDateString(Qt.locale("pt_BR"), textAt(i), "dd/MM/yyyy")
+                        if(today - day < 8.64e+7) {
+                            currentIndex = i
+                            break
+                        }
+                    }
+                }
             }
             ActivitiesStackView {
                 id: activitiesStackView
