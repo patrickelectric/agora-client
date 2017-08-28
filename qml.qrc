@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>activity.qml</file>
+        <file>speaker.qml</file>
+        <file>room.qml</file>
+        <file>tag.qml</file>
+        <file>about.qml</file>
+        <file>MyStackView.qml</file>
+        <file>MyTabButton.qml</file>
+        <file>MyToolButton.qml</file>
+        <file>MyGroupBox.qml</file>
+        <file>ActivitiesStackView.qml</file>
+        <file>JSONListModel.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>FontAwesome.otf</file>
+        <file>drawer.png</file>
+        <file>qtconbr-logo.png</file>
+        <file>qt-logo.png</file>
+        <file>agora-qtconbr-icon.png</file>
+    </qresource>
+</RCC>
